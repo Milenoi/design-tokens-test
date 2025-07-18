@@ -1,0 +1,24 @@
+name: Create PR from token-test to main
+
+on:
+  push:
+    branches:
+      - token-test
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "🔄 Update Tokens from Figma"
+          title: "💄 Neue Token-Änderungen"
+          body: "Automatischer Pull Request aus `token-test`, nachdem neue Tokens gepusht wurden."
+          base: main
+          branch: token-test

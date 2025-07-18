@@ -22,4 +22,4 @@ jobs:
           body: |
             Automatischer Pull Request aus `token-update`, nachdem neue Tokens gepusht wurden.
           base: main
-          branch: token-update  # ✅ korrektes Feld
+          branch: token-update 

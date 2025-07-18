@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - token-update
-  workflow_dispatch:
 
 jobs:
   create-pull-request:
@@ -18,9 +17,9 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          branch: auto/pr-${{ github.run_id }}   # ✅ neuer Branch!
+          base: main
           commit-message: "🔄 Update Tokens from Figma"
           title: "💄 Neue Token-Änderungen"
           body: |
-            Automatischer Pull Request aus `token-update`, nachdem neue Tokens gepusht wurden.
-          base: main
-          branch: token-update
+            Automatischer Pull Request nach Push auf `token-update`

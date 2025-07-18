@@ -4,14 +4,13 @@ on:
   push:
     branches:
       - token-update
-  workflow_dispatch:
 
 jobs:
   create-pull-request:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Create Pull Request
@@ -23,6 +22,4 @@ jobs:
           body: |
             Automatischer Pull Request aus `token-update`, nachdem neue Tokens gepusht wurden.
           base: main
-          head: token-update
-          branch: token-update
-          delete-branch: false
+          branch: token-update  # ✅ korrektes Feld

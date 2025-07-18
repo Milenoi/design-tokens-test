@@ -21,4 +21,4 @@ jobs:
           title: "💄 Neue Token-Änderungen"
           body: "Automatischer Pull Request aus `token-test`, nachdem neue Tokens gepusht wurden."
           base: main
-          branch: token-test
+          branch: token-update

@@ -1,0 +1,25 @@
+name: Create PR from token-update to main
+
+on:
+  push:
+    branches:
+      - token-update
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: auto/pr-${{ github.run_id }}   # ✅ neuer Branch!
+          base: main
+          commit-message: "🔄 Update Tokens from Figma"
+          title: "💄 Neue Token-Änderungen"
+          body: |
+            Automatischer Pull Request nach Push auf `token-update`

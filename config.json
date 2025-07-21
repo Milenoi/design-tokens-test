@@ -2,14 +2,16 @@
   "source": ["tokens/**/*.json"],
   "platforms": {
     "css": {
-      "transformGroup": "css",
+      "transformGroup": "custom/css",
       "buildPath": "build/",
       "files": [
         {
           "destination": "tokens.css",
           "format": "css/variables",
           "options": {
-            "outputReferences": true
+            "outputReferences": false,
+            "showFileHeader": false,
+            "resolveReferences": true
           }
         }
       ]

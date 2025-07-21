@@ -1,10 +1,12 @@
 {
   "name": "design-tokens-test",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "style-dictionary build"
+    "build2": "style-dictionary build",
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -13,12 +15,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Milenoi/design-tokens-test/issues"
   },
   "homepage": "https://github.com/Milenoi/design-tokens-test#readme",
-  "dependencies": {
-    "style-dictionary": "^5.0.1"
+  "devDependencies": {
+    "style-dictionary": "^4.4.0",
+    "style-dictionary-utils": "^4.1.0"
   }
 }

@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build2": "style-dictionary build",
-    "build": "node build.js"
+    "build": "style-dictionary build",
+    "build2": "node build.js"
   },
   "repository": {
     "type": "git",
